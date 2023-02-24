@@ -1,3 +1,4 @@
+/* editing logo to be animated */
 @keyframes logo{
     from{
         width: 25px;
@@ -13,17 +14,20 @@
     display: flex;
 
 }
+/* editing body with font style and background */
 body{
     font-family: 'Poppins', serif;
     background-image: url('../images/concrete_seamless.png');
     background-color: #f1f1f1;
 }
+/* editing header to be in center */
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
     
 }
+/* editing links to be in center and to stay same color when visited */
 .nav_links{
     display: flex;
     flex-direction:column;
@@ -31,15 +35,18 @@ header{
 .nav_links a:visited{
     color:blue;
 }
+/* editing only headers that are direct children of card class */
 .card>header{
     background-color: #288088;
     border: 2px solid #45ADAD;
     padding: 20px 0px;
     border-radius: 50px 50px 0px 0px;
 }
+/* card class initial size of 450px*/
 .card{
     flex-basis: 450px;
 }
+/* editing pricing class with flex to center cards */
 .pricing{
     display: flex;
     flex-wrap: wrap;
@@ -47,11 +54,13 @@ header{
     align-items: center;
     justify-content: center;
 }
+/* Style the images in the gallery class */
 .gallery > img{
     border: 10px solid #50C7C7;
     margin: 10px 10px 10px 10px;
     width: 300px;
 }
+/* add flex to gallery class */
 .gallery{
     display: flex;
     flex-direction: row;
@@ -60,37 +69,42 @@ header{
 }
 /* for screen size of 900px */
 @media screen and (min-width: 900px) {
+    /* Editing header and nav links to use flex */
     header{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
+    /* logo should be far left */
     #logo {
         justify-content: left;
     }
+    /* links should be far right */
     .nav_links{
         flex-direction: row;
         justify-content: flex-end;
     }
+    
     .pricing{
-        flex-basis: 275px;
+        align-items: center;
     }
     .card{
         flex-basis: 275px;
     }
     body>header{
-        position:sticky;
+        position: sticky;
         top: 0;
     }
 }
-
+/* for reduced motion */
 @media (prefers-reduced-motion) {
 .logo{
     animation: none;
 }
 }
-
+/* for page printed in portrait mode */
 @media print {
+    /* editing body with font and image */
    body{
     font-family: 'Arial', 'Helvetica';
     background-image: none;
@@ -98,24 +112,28 @@ header{
    nav{
     width: 100%;
    }
+   /* .nav_links should be spaced evenly */
    .nav_links{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: nowrap;
    }
+   /* elements should align on bottom */
    .pricing{
     flex-wrap: nowrap;
     align-items: flex-end;
    }
+   /* style card elements */
    .card{
     border: 2px solid #45ADDD;
     flex-basis: 325px
     }
-
+    /* Gallery should not be visible */
     #gallery, .gallery{
     display: none; 
     }
+    /* Step 21: Without using list-style-type add the thumbs up entity as shown in the cards - fix unicode for item to render*/
     .pricing li:nth-child(2)::after{
         content: "👍";
     }
